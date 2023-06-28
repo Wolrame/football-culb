@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+{% endblock %}
+
+{% block title %}Расписание{% endblock %}
+{% block content %}
+<div class="timeTableContent">
+{% if latest_Dates_list %}
+    <h1 class="sectionName">Расписание Матчей</h1>
+    <div class="datesContainer">
+    {% for TimeTable in latest_Dates_list %}
+        <div ><a class="dateBlock" href="{% url 'detail' TimeTable.id %}">{{ TimeTable.gamePlace }}</a></div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div> 
+{% endblock %}

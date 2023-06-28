@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/detail.css' %}">
+{% endblock %}
+{% block title %}Расписание матча в {{TimeTable}}{% endblock %}
+{% block content %}
+<div class="timeTable">
+    <div class="TimeTableName">
+        Матч
+    </div>
+    <div class="TimeTableContainer">
+        <div class="StadionName">
+            {{TimeTable}}
+        </div>
+        <div class="TimeTableDate">
+            <div>
+                Дата
+            </div>
+            <div>
+                {{TimeTable.gameDate}}
+            </div>
+        </div>
+        <div class="enemyTeamName">
+            <div>Команда оппонентов</div>
+            <div>{{TimeTable.enemyTeam}}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}    

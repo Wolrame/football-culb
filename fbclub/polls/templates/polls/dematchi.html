@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/detail.css' %}">
+{% endblock %}
+{% block title %}История Матчей{% endblock %}
+{% block content %}
+<div class="timeTable">
+    <table>
+        <tr>
+          <td>Матч</td>
+          <td>{{Match.timetable}}</td>
+
+        </tr>
+        <tr>
+          <td>Дата</td>
+          <td>{{Match.timetable.gameDate}}</td>
+        </tr>
+        <tr>
+            <td>Команда играющих</td>
+            <td>{{Match.team}}</td>
+        </tr>
+        <tr>
+            <td>Команда оппонентов</td>
+            <td>{{Match.timetable.enemyTeam}}</td>
+        </tr>
+        <tr>
+            <td>Счёт</td>
+            <td>{{Match.matchResult}}</td>
+        </tr>
+      </table>
+</div>
+{% endblock %}    

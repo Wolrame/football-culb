@@ -1,0 +1,29 @@
+.Teams{
+    margin-top: 5%;
+    margin-left: 8%;
+    width: 84%;
+    height: 100%;
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    border-radius: 5rem;
+}
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #000000;
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #000000;
+	border: 1px solid #000000;
+}
+.table td {
+	border: 1px solid #000000;
+	padding: 5px;
+}

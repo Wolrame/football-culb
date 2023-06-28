@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/deteams.css' %}">
+{% endblock %}
+{% block title %}Подробно о команде{{Team.name}}{% endblock %}
+{% block content %}
+<div class='Teams'>
+    <table class='table'>
+        <tr>
+          <td>Название Команды</td>
+          <td>{{Team.name}}</td>
+
+        </tr>
+        <tr>
+          <td>Тренер</td>
+          <td>{{Team.trainer}}</td>
+        </tr>
+        {% for player in Player%}
+            <tr>
+            {% if player.team.name == Team.name %}
+                <td>Игрок</td>
+                <td>{{player.firstName}} {{player.lastName}}</td>
+
+            {% endif %}
+            </tr>
+        {% endfor %}
+        
+      </table>
+{% endblock %}    

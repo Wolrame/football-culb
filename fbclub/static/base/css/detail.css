@@ -1,0 +1,13 @@
+.timeTable{
+    margin-top: 5%;
+    margin-left: 8%;
+    width: 84%;
+    height: 100%;
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    border-radius: 5rem;
+}

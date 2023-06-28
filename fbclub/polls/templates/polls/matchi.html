@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+{% endblock %}
+
+{% block title %}Результаты{% endblock %}
+{% block content %}
+<div class="timeTableContent">
+{% if latest_matchi_list %}
+    <h1 class="sectionName">Результаты Матчей</h1>
+    <div class="datesContainer">
+    {% for Match in latest_matchi_list %}
+        <div ><a class="dateBlock" href="{% url 'dematchi' Match.id %}">{{Match.team}}</a></div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div> 
+{% endblock %}

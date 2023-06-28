@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssedd %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+{% endblock %}
+
+{% block title %}Команды{% endblock %}
+{% block content %}
+<div class="timeTableContent">
+{% if latest_Teams_list %}
+    <h1 class="sectionName">Команды</h1>
+    <div class="datesContainer">
+    {% for Team in latest_Teams_list %}
+        <div ><a class="dateBlock" href="{% url 'deteams' Team.id %}">{{ Team.name }}</a></div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div> 
+{% endblock %}
